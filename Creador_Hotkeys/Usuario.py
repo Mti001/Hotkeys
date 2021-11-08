@@ -1,6 +1,7 @@
 import keyboard
 import pyautogui
 from io import open
+import time
 
 class Usuario:
 	def obtener_posicion(self):
@@ -41,6 +42,13 @@ class Usuario:
 		#Posicion
 		pyautogui.moveTo(posicion_x, posicion_y)
 
+		#Lanzar cañon
+		pyautogui.mouseDown(posicion_x, posicion_y, button="left") 
+		time.sleep(1) 
+		pyautogui.mouseUp(posicion_x, posicion_y) 
+
+		
+
 
 	def elegir_combo(self, lista_combo):
 		print("combo elegido")
@@ -59,6 +67,8 @@ class Usuario:
 		archivo.close()
 
 		self.elegir_combo(lista_combo)
+
+
 
 
 
